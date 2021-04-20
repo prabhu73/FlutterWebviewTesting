@@ -1,0 +1,10 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_webview_module/.android/include_flutter.groovy'
+))
+rootProject.name = "My Flutter Webview"
+
+include ':flutter_webview_module'
+project(':flutter_webview_module').projectDir = new File('../flutter_webview_module')
